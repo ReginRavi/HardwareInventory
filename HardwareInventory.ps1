@@ -3,7 +3,7 @@ $OpenFileDialog = New-Object System.Windows.Forms.OpenFileDialog
 $OpenFileDialog.initialDirectory = $initialDirectory
 $OpenFileDialog.filter = "txt (*.txt)| *.txt"
 $OpenFileDialog.ShowDialog() | Out-Null
-$getcomputers=$OpenFileDialog.filename
+$getcomputers=get-content $OpenFileDialog.filename
 $ErrorActionPreference = "Continue"
 Function Policy($comp) {
 try {
